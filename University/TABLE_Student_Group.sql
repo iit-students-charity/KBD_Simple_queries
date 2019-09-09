@@ -1,4 +1,5 @@
 USE University;
+
 CREATE TABLE Student_group
 (
     CodeNumber VARCHAR(3) PRIMARY KEY,

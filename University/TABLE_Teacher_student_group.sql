@@ -1,9 +1,10 @@
 USE University;
+
 CREATE TABLE Teacher_student_group
 (
-    GroupCodeNumber VARCHAR(3),
-    SubjectCodeNumber VARCHAR(3),
-    TeacherPersonalNumber VARCHAR(4),
+    GroupCodeNumber VARCHAR(3) REFERENCES Student_group(CodeNumber),
+    SubjectCodeNumber VARCHAR(3) REFERENCES Subject(CodeNumber),
+    TeacherPersonalNumber VARCHAR(4) REFERENCES Teacher(PersonalNumber),
     AudienceNumber VARCHAR(3),
 	PRIMARY KEY (GroupCodeNumber, SubjectCodeNumber, TeacherPersonalNumber, AudienceNumber)
 );

@@ -1,7 +1,8 @@
 USE University;
+
 CREATE TABLE Teacher
 (
-    PersonalNumber VARCHAR(3) PRIMARY KEY,
+    PersonalNumber VARCHAR(4) PRIMARY KEY,
     LastName VARCHAR(20),
     Position VARCHAR(20),
     Department VARCHAR(50),
