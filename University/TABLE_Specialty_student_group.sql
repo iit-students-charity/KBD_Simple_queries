@@ -1,5 +1,3 @@
-
-
 USE University;
 
 CREATE TABLE Specialty_student_group
