@@ -67,3 +67,62 @@ SELECT SUM(Student_group.CountOfMembers) AS 'Count of members' FROM Student_grou
 	INNER JOIN Specialty_student_group
 	ON Student_group.CodeNumber = Specialty_student_group.StudentGroupCodeNumber
 WHERE Specialty_student_group.SpecialtyName = 'ÝÂÌ';
+
+/* 1.12 */
+SELECT Teacher.PersonalNumber FROM Teacher
+	INNER JOIN Specialty_teacher
+	ON Specialty_teacher.TeacherPersonalNumber = Teacher.PersonalNumber
+WHERE Specialty_teacher.SpecialtyName = 'ÝÂÌ';
+
+/* 1.13 */
+SELECT Subject.CodeNumber FROM Subject;
+
+/* 1.14 */
+SELECT Teacher.LastName FROM Teacher
+	INNER JOIN Teacher_student_group
+	ON Teacher.PersonalNumber = Teacher_student_group.TeacherPersonalNumber
+WHERE Teacher_student_group.GroupCodeNumber = '14Ï';
+
+/* 1.15 */
+SELECT DISTINCT Subject.* FROM Subject
+WHERE Subject.CodeNumber NOT IN (
+		SELECT DISTINCT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+		WHERE Teacher_student_group.TeacherPersonalNumber = '221Ë'
+	);
+
+/* 1.16 */
+SELECT DISTINCT Subject.* FROM Subject
+WHERE Subject.CodeNumber NOT IN(
+	SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+		INNER JOIN Student_group
+		ON Student_group.CodeNumber = Teacher_student_group.GroupCodeNumber
+	WHERE Student_group.Name = 'Ì-6'
+);
+
+/* 1.17 */
+SELECT DISTINCT Teacher.* FROM Teacher
+	INNER JOIN Teacher_student_group
+	ON Teacher_student_group.TeacherPersonalNumber = Teacher.PersonalNumber
+WHERE (Teacher.Position = 'Äîöåíò' AND
+	Teacher_student_group.GroupCodeNumber IN ('8Ã', '3Ã'));
+
+/* 1.18 */
+SELECT DISTINCT tss.SubjectCodeNumber, tss.TeacherPersonalNumber, tss.GroupCodeNumber FROM Teacher_student_group AS tss
+	INNER JOIN Teacher
+	ON Teacher.PersonalNumber = tss.TeacherPersonalNumber
+		INNER JOIN Specialty_teacher
+		ON Specialty_teacher.TeacherPersonalNumber = Teacher.PersonalNumber
+WHERE (Teacher.Department = 'ÝÂÌ' AND Specialty_teacher.SpecialtyName = 'ÀÑÎÈ');
+
+/* 1.19 */
+SELECT DISTINCT Specialty_student_group.StudentGroupCodeNumber FROM Specialty_student_group
+	INNER JOIN Specialty_teacher
+	ON Specialty_teacher.SpecialtyName = Specialty_student_group.SpecialtyName;
+
+/* 1.20 */
+SELECT DISTINCT Teacher.PersonalNumber FROM Teacher
+	INNER JOIN Specialty_teacher
+	ON Specialty_teacher.TeacherPersonalNumber = Teacher.PersonalNumber
+		INNER JOIN Specialty_student_group
+		ON Specialty_teacher.SpecialtyName = Specialty_student_group.SpecialtyName
+	WHERE Teacher.Department = 'ÝÂÌ';
