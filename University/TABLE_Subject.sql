@@ -1,4 +1,5 @@
 USE University;
+
 CREATE TABLE Subject
 (
     CodeNumber VARCHAR(3) PRIMARY KEY,

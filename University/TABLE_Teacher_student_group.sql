@@ -2,9 +2,9 @@ USE University;
 
 CREATE TABLE Teacher_student_group
 (
-    GroupCodeNumber VARCHAR(3) REFERENCES Student_group(CodeNumber),
-    SubjectCodeNumber VARCHAR(3) REFERENCES Subject(CodeNumber),
-    TeacherPersonalNumber VARCHAR(4) REFERENCES Teacher(PersonalNumber),
+    GroupCodeNumber VARCHAR(3) REFERENCES Student_group(CodeNumber) ON DELETE CASCADE,
+    SubjectCodeNumber VARCHAR(3) REFERENCES Subject(CodeNumber) ON DELETE CASCADE,
+    TeacherPersonalNumber VARCHAR(4) REFERENCES Teacher(PersonalNumber) ON DELETE CASCADE,
     AudienceNumber VARCHAR(3),
 	PRIMARY KEY (GroupCodeNumber, SubjectCodeNumber, TeacherPersonalNumber, AudienceNumber)
 );
