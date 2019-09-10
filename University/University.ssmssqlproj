@@ -19,11 +19,23 @@
     </LogicalFolder>
     <LogicalFolder Name="Запросы" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="Simple_queries.sql">
+        <FileNode Name="TABLE_J.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-ETNFNVU\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-ETNFNVU\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>Simple_queries.sql</FullPath>
+          <FullPath>TABLE_J.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TABLE_P.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-ETNFNVU\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-ETNFNVU\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>TABLE_P.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TABLE_S.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-ETNFNVU\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-ETNFNVU\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>TABLE_S.sql</FullPath>
         </FileNode>
         <FileNode Name="TABLE_Specialty.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-ETNFNVU\SQLEXPRESS:True</AssociatedConnectionMoniker>
@@ -49,6 +61,12 @@
           <AssociatedConnUserName />
           <FullPath>TABLE_Specialty_teacher.sql</FullPath>
         </FileNode>
+        <FileNode Name="TABLE_SPJ.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-ETNFNVU\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-ETNFNVU\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>TABLE_SPJ.sql</FullPath>
+        </FileNode>
         <FileNode Name="TABLE_Student_Group.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-ETNFNVU\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-ETNFNVU\SQLEXPRESS</AssociatedConnSrvName>
@@ -72,6 +90,12 @@
           <AssociatedConnSrvName>DESKTOP-ETNFNVU\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>TABLE_Teacher_student_group.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Univesity_queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-ETNFNVU\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-ETNFNVU\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Univesity_queries.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
