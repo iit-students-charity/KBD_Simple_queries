@@ -126,3 +126,51 @@ SELECT DISTINCT Teacher.PersonalNumber FROM Teacher
 		INNER JOIN Specialty_student_group
 		ON Specialty_teacher.SpecialtyName = Specialty_student_group.SpecialtyName
 	WHERE Teacher.Department = 'Ýยฬ';
+
+/* 1.21 */
+SELECT DISTINCT Specialty_student_group.SpecialtyName FROM Specialty_student_group
+	INNER JOIN Specialty_teacher
+	ON Specialty_student_group.SpecialtyName = Specialty_teacher.SpecialtyName
+		INNER JOIN Teacher
+		ON Specialty_teacher.TeacherPersonalNumber = Teacher.PersonalNumber
+	WHERE Teacher.Department = 'ภัำ';
+
+/* 1.22 */
+SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+	INNER JOIN Student_group
+	ON Student_group.CodeNumber = Teacher_student_group.GroupCodeNumber
+WHERE Student_group.Name = 'ภั-8';
+
+/* 1.23 */
+SELECT DISTINCT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
+	INNER JOIN (
+		SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+			INNER JOIN Student_group
+			ON Student_group.CodeNumber = Teacher_student_group.GroupCodeNumber
+		WHERE Student_group.Name = 'ภั-8'
+	) AS AC8
+	ON AC8.SubjectCodeNumber = Teacher_student_group.SubjectCodeNumber;
+
+/* 1.24 */
+SELECT DISTINCT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
+WHERE Teacher_student_group.SubjectCodeNumber NOT IN(
+	SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+		INNER JOIN Student_group
+		ON Student_group.CodeNumber = Teacher_student_group.GroupCodeNumber
+	WHERE Student_group.Name = 'ภั-8'
+);
+
+/* 1.25 */
+SELECT DISTINCT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
+WHERE Teacher_student_group.SubjectCodeNumber NOT IN(
+	SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+	WHERE Teacher_student_group.TeacherPersonalNumber = 'ภั-8'
+);
+
+/* 1.26 */
+SELECT DISTINCT Teacher_student_group.TeacherPersonalNumber FROM Teacher_student_group
+WHERE Teacher_student_group.SubjectCodeNumber != '12ฯ' AND
+	Teacher_student_group.GroupCodeNumber = (
+		SELECT Student_group.CodeNumber FROM Student_group
+		WHERE Student_group.Name = 'Ý-15'
+	);
