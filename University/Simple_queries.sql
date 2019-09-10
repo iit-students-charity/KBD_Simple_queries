@@ -53,14 +53,14 @@ WHERE (Teacher_student_group.GroupCodeNumber = Student_group.CodeNumber AND
 	Teacher_student_group.SubjectCodeNumber = Subject.CodeNumber);
 
 /* 1.10 Duplicates!!! */
-SELECT DISTINCT sg1.CodeNumber AS First, sg2.CodeNumber AS Second FROM Student_group AS sg1
+SELECT sg1.CodeNumber AS First, sg2.CodeNumber AS Second FROM Student_group AS sg1
 	INNER JOIN Student_group as sg2
 	ON sg1.CodeNumber != sg2.CodeNumber
 		INNER JOIN Specialty_student_group AS ssg1
 		ON ssg1.StudentGroupCodeNumber = sg1.CodeNumber
 			INNER JOIN Specialty_student_group AS ssg2
 			ON ssg2.StudentGroupCodeNumber = sg2.CodeNumber
-WHERE (ssg1.SpecialtyName != ssg2.SpecialtyName);
+WHERE (ssg1.SpecialtyName = ssg2.SpecialtyName);
 
 /* 1.11 */
 SELECT SUM(Student_group.CountOfMembers) AS 'Count of members' FROM Student_group
