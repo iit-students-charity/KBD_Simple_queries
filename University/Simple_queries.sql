@@ -143,18 +143,17 @@ WHERE Student_group.Name = 'ภั-8';
 
 /* 1.23 */
 SELECT DISTINCT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
-	INNER JOIN (
-		SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+WHERE Teacher_student_group.GroupCodeNumber IN (
+		SELECT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
 			INNER JOIN Student_group
 			ON Student_group.CodeNumber = Teacher_student_group.GroupCodeNumber
 		WHERE Student_group.Name = 'ภั-8'
-	) AS AC8
-	ON AC8.SubjectCodeNumber = Teacher_student_group.SubjectCodeNumber;
+	);
 
 /* 1.24 */
 SELECT DISTINCT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
-WHERE Teacher_student_group.SubjectCodeNumber NOT IN(
-	SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
+WHERE Teacher_student_group.GroupCodeNumber NOT IN(
+	SELECT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
 		INNER JOIN Student_group
 		ON Student_group.CodeNumber = Teacher_student_group.GroupCodeNumber
 	WHERE Student_group.Name = 'ภั-8'
@@ -162,9 +161,9 @@ WHERE Teacher_student_group.SubjectCodeNumber NOT IN(
 
 /* 1.25 */
 SELECT DISTINCT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
-WHERE Teacher_student_group.SubjectCodeNumber NOT IN(
-	SELECT Teacher_student_group.SubjectCodeNumber FROM Teacher_student_group
-	WHERE Teacher_student_group.TeacherPersonalNumber = 'ภั-8'
+WHERE Teacher_student_group.GroupCodeNumber NOT IN(
+	SELECT Teacher_student_group.GroupCodeNumber FROM Teacher_student_group
+	WHERE Teacher_student_group.TeacherPersonalNumber = '430ห'
 );
 
 /* 1.26 */
