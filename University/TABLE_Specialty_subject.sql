@@ -9,9 +9,5 @@ CREATE TABLE Specialty_subject
 INSERT INTO Specialty_subject 
 (SubjectCodeNumber, SpecialtyName) 
 VALUES
-('12П', 'ЭВМ'),
-('14П', 'ЭВМ'),
-('17П', 'АСОИ'),
-('18П', 'АСОИ'),
-('34П', 'СД'),
-('22П', 'Бухучета');
+('12П', 'ЭВМ'), ('14П', 'ЭВМ'), ('17П', 'АСОИ'),
+('18П', 'АСОИ'), ('34П', 'СД'), ('22П', 'Бухучета');
